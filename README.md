@@ -1,2 +1,3 @@
-# magicmirror
-Learning Project. Trying to create magic mirror for home use only.
+# Magic Mrror
+Trying to create magic mirror for home use only.
+Coming soon
