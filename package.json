@@ -1,0 +1,34 @@
+{
+  "name": "magicmirror",
+  "version": "1.0.1",
+  "description": "Learning Project and for my own use.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Farhan-Nazir/magicmirror.git"
+  },
+  "keywords": [
+    "Magic",
+    "mirror",
+    "smart",
+    "mirror"
+  ],
+  "author": "Farhan Nazir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Farhan-Nazir/magicmirror/issues"
+  },
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "ejs": "2.6.1",
+    "express": "4.16.3",
+    "mongoose": "5.2.6",
+    "openweathermap-node": "^1.1.2",
+    "request": "^2.88.0",
+    "socket.io": "^2.1.1"
+  },
+  "homepage": "https://github.com/Farhan-Nazir/magicmirror#readme"
+}
