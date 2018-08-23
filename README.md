@@ -1,4 +1,4 @@
-# Magic Mrror
+# Magic Mirror
 A magic mirror app for home use. \
 There is screenshot in main folder. \
 Some simple functions such as Weather, Day Tasks , Time & date, rss feed from sydsvenska (Swedish newspaper).\
