@@ -1,5 +1,6 @@
 let weather = require("./weather");
 let todo = require("./todo");
+let rssFeeds = require("./rssFeed");
 const monthNames = [
   "Jan",
   "Feb",
@@ -49,4 +50,9 @@ module.exports.forecast = io => {
 //Todo Start
 module.exports.todo = io => {
   todo.todoList(io);
+};
+
+//Rss start
+module.exports.rssFeeds = io => {
+  rssFeeds.rss(io);
 };

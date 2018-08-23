@@ -23,6 +23,7 @@ io.on("connection", function(socket) {
   app_module.forecast(io);
   app_module.DateTime(io);
   app_module.todo(io);
+  app_module.rssFeeds(io);
 });
 
 // setting up template engine and static folder.
@@ -37,10 +38,13 @@ app.get("/", function(req, res) {
 
 /*----------------- Timer Setting --------------------- */
 
+// Every Minute Group
 setInterval(() => {
   app_module.forecast(io);
 }, 1000 * 60 * 60);
 
+// Every Hour Group
 setInterval(() => {
   app_module.todo(io);
+  app_module.rssFeeds(io);
 }, 1000 * 60);

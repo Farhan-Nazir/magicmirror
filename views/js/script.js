@@ -48,6 +48,21 @@ socket.on("todoList", data => {
 });
 // Todo End
 
+//Rss Start
+socket.on("rss", data => {
+  let rss = document.getElementById("rss");
+  for (var i = 0; data.items.length > i; i++) {
+    i++;
+    rss.innerHTML +=
+      "   |   " +
+      data.items[i]["content:encoded"] +
+      " - " +
+      data.items[i].pubDate.substring(16, 22) +
+      data.items[i].pubDate.substring(4, 11);
+  }
+});
+//Rss End
+
 /* -------------------- Weather Helper Functions ---------------------------- */
 
 // Kevin to Celcius
@@ -73,4 +88,11 @@ function addZero(i) {
 function mpsTokmH(ms) {
   let res = (ms * 3.6) / 5;
   return Math.round(res) + " km/h";
+}
+
+function getforEach(data) {
+  data = [];
+  for (var i = 0; data.items.length > 0; i++) {
+    let items = data.items[i];
+  }
 }
