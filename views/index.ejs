@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="./css/style.css">
-    <link href="./css/weather-icons.min.css" rel="stylesheet" type="text/css">
-    <link href="./css/weather-icons-wind.min.css" rel="stylesheet" type="text/css">
+    <link href="./css/weather-icons.css" rel="stylesheet" type="text/css">
+    <link href="./css/weather-icons-wind.css" rel="stylesheet" type="text/css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
     <title>Magic Mirror</title>
 </head>
@@ -39,16 +39,16 @@
         </div>
 
         <span class="sexy_line1"></span>
+        <ul class="weatherList" id="weatherList"></ul>
 
         <span class="sexy_line"></span>
 
         <div class="todo">
-            <h3 id="todo_title">Tasks</h3>
-            <ul class="li"></ul>
+            <h3 id="todo_title">Calender</h3>
+            <ul class="li" id="goList"></ul>
         </div>
-        <marquee behavior="scroll" direction="left" scrollamount="6" id="rss">
-
-        </marquee>
+        <!-- <ul id="goList"></ul> -->
+        <marquee behavior="scroll" direction="left" scrollamount="6" id="rss"></marquee>
         <footer class="footer">
             <p>Magic Mirror 1.1
 

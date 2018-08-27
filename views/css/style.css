@@ -8,11 +8,11 @@ html {
 .date {
   position: absolute;
   font-size: 20px;
-  top: 3%;
+  top: 6%;
 }
 .time {
   position: absolute;
-  top: 6%;
+  top: 8%;
   font-size: 45px;
 }
 .icon {
@@ -102,8 +102,24 @@ html {
   top: 13%;
   left: 2%;
 }
+
 .li {
   font-size: 20px;
+  list-style-type: none;
+}
+li:nth-of-type(4n) {
+  opacity: 0.4;
+}
+li:nth-of-type(5n + 5) {
+  opacity: 0.1;
+}
+
+.weatherItem {
+  position: absolute;
+  top: 20%;
+  right: 5%;
+  list-style-type: none;
+  padding: 2%;
 }
 
 .weather_other_info {

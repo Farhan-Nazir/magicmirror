@@ -1,6 +1,5 @@
 //App requirement
 let express = require("express");
-let ejs = require("ejs");
 let bodyParse = require("body-parser");
 let path = require("path");
 var socket = require("socket.io"); // not using yet
@@ -8,7 +7,7 @@ let app = express();
 
 //own app module
 let app_module = require("./app_modules/app_module");
-//Setting up body-parse
+//Setting up body-parsers
 app.use(bodyParse.json());
 app.use(bodyParse.urlencoded({ extended: true }));
 
@@ -17,13 +16,15 @@ let port = process.env.PORT || 3000; //Use on server.
 let server = app.listen(port, () => {
   console.log("App started on port", port);
 });
+
+//On Connections with socket
 let io = socket(server);
 io.on("connection", function(socket) {
   console.log("a user connected", socket.id);
   app_module.forecast(io);
   app_module.DateTime(io);
-  app_module.todo(io);
   app_module.rssFeeds(io);
+  app_module.googleEvents(io);
 });
 
 // setting up template engine and static folder.
@@ -38,13 +39,14 @@ app.get("/", function(req, res) {
 
 /*----------------- Timer Setting --------------------- */
 
-// Every Minute Group
+// Update Every Hour Group
 setInterval(() => {
   app_module.forecast(io);
+  app_module.googleEvents(io);
 }, 1000 * 60 * 60);
 
-// Every Hour Group
+// Update Every Minute Group
 setInterval(() => {
-  app_module.todo(io);
+  //app_module.todo(io);
   app_module.rssFeeds(io);
 }, 1000 * 60);

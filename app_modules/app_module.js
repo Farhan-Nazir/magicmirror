@@ -1,6 +1,8 @@
 let weather = require("./weather");
-let todo = require("./todo");
+//let todo = require("./todo");
 let rssFeeds = require("./rssFeed");
+let googleCal = require("./googleCalendar");
+
 const monthNames = [
   "Jan",
   "Feb",
@@ -47,12 +49,12 @@ module.exports.forecast = io => {
 };
 // Weather End
 
-//Todo Start
-module.exports.todo = io => {
-  todo.todoList(io);
-};
-
 //Rss start
 module.exports.rssFeeds = io => {
   rssFeeds.rss(io);
+};
+
+// google calendar
+module.exports.googleEvents = io => {
+  googleCal.myEvents(io);
 };
