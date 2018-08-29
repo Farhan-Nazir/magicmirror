@@ -48,7 +48,7 @@ socket.on("googleEvents", data => {
 
 // Kevin to Celcius
 function k2c(k) {
-  return Math.round(k - 273, 15);
+  return (k - 273.15).toFixed(1);
 }
 
 //Date number to Date
@@ -97,7 +97,7 @@ function currentForecast(data) {
 
 function fiveDaysWeather(data) {
   let weatherList = document.getElementById("weatherList");
-  //const dayNames = ["Sön", "Mån", "Tir", "Ons", "Tor", "Fre", "Lör"];
+  const dayNames = ["Sön", "Mån", "Tir", "Ons", "Tor", "Fre", "Lör"];
 
   if (weatherList.innerHTML.length > 0) {
     weatherList.innerHTML = "";
@@ -118,8 +118,9 @@ function fiveDaysWeather(data) {
 
     let temp = allTempList.main.temp;
     let listItem = document.createElement("li");
-    //let dayName = date.getDay();
-    let items = "     " + k2c(temp) + "°   - " + addZero(hour) + ":00 ";
+    let dayName = date.getDay();
+    let items =
+      " " + k2c(temp) + "° " + dayNames[dayName] + " " + addZero(hour) + ":00 ";
     listItem.setAttribute("class", "weatherItem");
     listItem.appendChild(createIcon);
     listItem.appendChild(document.createTextNode(items));

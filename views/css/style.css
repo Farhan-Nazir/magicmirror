@@ -12,7 +12,7 @@ html {
 }
 .time {
   position: absolute;
-  top: 8%;
+  top: 9%;
   font-size: 45px;
 }
 .icon {
@@ -62,9 +62,9 @@ html {
 }
 .sexy_line {
   position: absolute;
-  top: 18%;
+  top: 20.5%;
   left: 1.5%;
-  width: 350px;
+  width: 300px;
   border: none;
   color: white;
   height: 1px;
@@ -99,13 +99,14 @@ html {
 
 .todo {
   position: absolute;
-  top: 13%;
+  top: 16%;
   left: 2%;
 }
 
 .li {
   font-size: 20px;
   list-style-type: none;
+  left: 1%;
 }
 li:nth-of-type(4n) {
   color: rgba(255, 255, 255, 0.575);
@@ -120,12 +121,13 @@ li:nth-child(n + 9):nth-child(-n + 20) {
 .weatherItem {
   list-style-type: none;
   margin-top: 0.5em;
+  word-spacing: 20px;
 }
 
 .divWeatherItem {
   position: absolute;
   top: 20%;
-  right: 9%;
+  right: 7%;
   font-size: 18px;
 }
 .weather_other_info {
