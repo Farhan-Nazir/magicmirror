@@ -80,7 +80,7 @@ html {
 }
 .sexy_line1 {
   position: absolute;
-  top: 16%;
+  top: 16.5%;
   right: 80px;
   width: 300px;
   border: none;
@@ -108,24 +108,30 @@ html {
   list-style-type: none;
 }
 li:nth-of-type(4n) {
-  opacity: 0.4;
+  color: rgba(255, 255, 255, 0.575);
 }
-li:nth-of-type(5n + 5) {
-  opacity: 0.1;
+li:nth-child(n + 5):nth-child(-n + 8) {
+  color: rgba(255, 255, 255, 0.185);
+}
+li:nth-child(n + 9):nth-child(-n + 20) {
+  color: rgba(255, 255, 255, 0.1);
 }
 
 .weatherItem {
-  position: absolute;
-  top: 20%;
-  right: 5%;
   list-style-type: none;
-  padding: 2%;
+  margin-top: 0.5em;
 }
 
+.divWeatherItem {
+  position: absolute;
+  top: 20%;
+  right: 9%;
+  font-size: 18px;
+}
 .weather_other_info {
   position: absolute;
+  padding: 2px;
   top: 16.8%;
   right: 5%;
   font-size: 20px;
-  display: inline;
 }

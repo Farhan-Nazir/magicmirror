@@ -109,7 +109,7 @@ module.exports.myEvents = io => {
             // const getDate = event.start.date;
             let eventHour = addZero(new Date(getTime).getHours());
             let eventMins = addZero(new Date(getTime).getMinutes());
-            let eventDay = addZero(new Date(getTime).getDay());
+            let eventDay = addZero(new Date(getTime).getDate());
             let eventMonth = new Date(getTime).getMonth();
             let month = monthNames[eventMonth];
             const eventData = `${eventHour}:${eventMins} - ${
@@ -118,6 +118,8 @@ module.exports.myEvents = io => {
             io.sockets.emit("googleEvents", eventData);
           });
         } else {
+          let message = "No Upcoming Events Found";
+          io.sockets.emit("googleEvents", message);
           console.log("No upcoming events found.");
         }
       }

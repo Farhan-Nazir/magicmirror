@@ -11,9 +11,12 @@ socket.on("DateTime", data => {
 // Date & Time End
 
 //Weather Start
-socket.on("forecast", data => {
-  currenWeather(data); // Current Weather
-  fiveDaysWeather(data);
+socket.on("currentForecast", data => {
+  currentForecast(data); // Current Weather
+});
+
+socket.on("fiveDaysForecast", data => {
+  fiveDaysWeather(data); // Five Days Weather
 });
 //Weather End
 
@@ -50,8 +53,7 @@ function k2c(k) {
 
 //Date number to Date
 function calDateTime(dt) {
-  let getDt = new Date(dt * 1000);
-  let date = new Date(getDt);
+  let date = new Date(dt * 1000);
   let day = date.getDay();
   return day;
 }
@@ -71,61 +73,72 @@ function mpsTokmH(ms) {
   return Math.round(res) + " km/h";
 }
 
-function getforEach(data) {
-  data = [];
-  for (let i = 0; data.items.length > 0; i++) {
-    let items = data.items[i];
-  }
+function onlyUnique(value, index, self) {
+  return self.indexOf(value) === index;
 }
 
-function currenWeather(data) {
+function currentForecast(data) {
   let current_temp = document.getElementById("current_temp");
+
   let icon = document.getElementById("icon");
   let temp_max = document.getElementById("temp_max");
   let humidity = document.getElementById("humidity");
   let wind = document.getElementById("wind");
   let weather_txt = document.getElementById("weather_txt");
 
-  current_temp.innerHTML = k2c(data.list[0].main.temp) + "°"; // current temp
-  icon.setAttribute("class", "wi wi-owm-" + data.list[0].weather[0].id); // icon
-  temp_max.innerHTML = "High: " + k2c(data.list[0].main.temp_max) + "°"; // max temp
-  humidity.innerHTML = data.list[0].main.humidity + " %"; // rain chance
-  wind.innerHTML = mpsTokmH(data.list[0].wind.speed); // wind speed
-  weather_txt.innerHTML = data.list[0].weather[0].description;
-  console.log("Weather interval check !!!");
-  //console.log(JSON.stringify(data[0].list[0].main.temp));
+  current_temp.innerHTML = k2c(data.main.temp) + "°"; // current temp
+  icon.setAttribute("class", "wi wi-owm-" + data.weather[0].id); // icon
+  temp_max.innerHTML = "High: " + k2c(data.main.temp_max) + "°"; // max temp
+  humidity.innerHTML = data.main.humidity + " %"; // rain chance
+  wind.innerHTML = mpsTokmH(data.wind.speed); // wind speed
+  weather_txt.innerHTML = data.weather[0].description;
+  console.log("Weather interval check !!!" + new Date().toLocaleTimeString());
 }
 
 function fiveDaysWeather(data) {
   let weatherList = document.getElementById("weatherList");
-  const dayNames = [
-    "Måndag",
-    "Tirsdag",
-    "Onsdag",
-    "Torsdag",
-    "Fredag",
-    "Lördag",
-    "Söndag"
-  ];
+  //const dayNames = ["Sön", "Mån", "Tir", "Ons", "Tor", "Fre", "Lör"];
+
   if (weatherList.innerHTML.length > 0) {
     weatherList.innerHTML = "";
   }
 
-  for (let i = 0; i <= 1; i += 1) {
+  for (let i = 0; i <= 6; i++) {
+    // let date = new Date(data.list[i].dt * 1000);
     let allTempList = data.list[i];
-    let day = calDateTime(allTempList.dt);
-    let dayName = dayNames[day];
-    console.log(allTempList.dt + "-" + i);
+    let date = new Date(allTempList.dt * 1000);
+    let hour = date.getHours();
 
-    //let icon = allTempList.weather[i].id;
+    //if (date.getDay() != new Date().getDay()) {
+    // let unique = [...new Set(allTempList.list[i])];
+
+    let icon5 = allTempList.weather[0].id;
+    let createIcon = document.createElement("i");
+    createIcon.setAttribute("class", "wi wi-owm-" + icon5);
+
     let temp = allTempList.main.temp;
-
-    //let allTemps = [];
-
-    let items = dayName + " " + k2c(temp) + "°";
     let listItem = document.createElement("li");
+    //let dayName = date.getDay();
+    let items = "     " + k2c(temp) + "°   - " + addZero(hour) + ":00 ";
+    listItem.setAttribute("class", "weatherItem");
+    listItem.appendChild(createIcon);
     listItem.appendChild(document.createTextNode(items));
-    listItem.classList.add("weatherItem");
+
     weatherList.appendChild(listItem);
+    console.log(date.getHours() + "-" + date.getDay() + "-" + icon5 + "- " + i);
   }
 }
+
+//console.log(JSON.stringify(data[0].list[0].main.temp));
+//}
+
+/*
+function fiveDaysWeather(data) {
+  let weatherList = document.getElementById("weatherList");
+  
+
+  for (let i = 0; i <= 5; i += 1) {
+    
+  }
+}
+*/

@@ -1,18 +1,30 @@
 const OpenWeatherMapHelper = require("openweathermap-node");
 const helper = new OpenWeatherMapHelper({
-  APPID: "ae16f14d6759666e27a4fb57b939cde5",
+  APPID: "815a6d79b8c7082e66da7a8e9ebcda39",
   units: "metric"
 });
-let lat = 55.6053;
-let lon = 13.0002;
+let cityId = 2692969;
 
-helper.getTenDaysForecastByGeoCoordinates(lat, lon, (err, tenDaysForecast) => {
+helper.getCurrentWeatherByCityID(cityId, (err, currentWeather) => {
   if (err) {
     console.log(err);
   } else {
-    module.exports.tenDays = io => {
-      let data = tenDaysForecast;
-      io.sockets.emit("forecast", data);
+    module.exports.currentWeather = io => {
+      let data = currentWeather;
+      console.log(data);
+      io.sockets.emit("currentForecast", data);
+    };
+  }
+});
+
+helper.getFiveDaysByCityID(cityId, (err, fiveDaysForecast) => {
+  if (err) {
+    console.log(err);
+  } else {
+    module.exports.fiveDays = io => {
+      let data = fiveDaysForecast;
+      console.log(data);
+      io.sockets.emit("fiveDaysForecast", data);
     };
   }
 });

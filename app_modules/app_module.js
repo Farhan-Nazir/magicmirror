@@ -45,7 +45,8 @@ module.exports.DateTime = io => {
 
 //weather Start
 module.exports.forecast = io => {
-  weather.tenDays(io);
+  weather.currentWeather(io);
+  weather.fiveDays(io);
 };
 // Weather End
 
