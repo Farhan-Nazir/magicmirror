@@ -111,8 +111,11 @@ html {
 li:nth-of-type(4n) {
   color: rgba(255, 255, 255, 0.575);
 }
-li:nth-child(n + 5):nth-child(-n + 8) {
-  color: rgba(255, 255, 255, 0.185);
+li:nth-child(n + 5):nth-child(-n + 6) {
+  color: rgba(255, 255, 255, 0.144);
+}
+li:nth-child(n + 7):nth-child(-n + 8) {
+  color: rgba(255, 255, 255, 0.041);
 }
 li:nth-child(n + 9):nth-child(-n + 20) {
   color: rgba(255, 255, 255, 0.1);

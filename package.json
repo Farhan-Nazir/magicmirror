@@ -28,7 +28,6 @@
     "fs": "^0.0.1-security",
     "googleapis": "^27.0.0",
     "mongoose": "5.2.6",
-    "openweathermap-node": "^1.1.2",
     "readline": "^1.3.0",
     "request": "^2.88.0",
     "rss-parser": "^3.4.3",
