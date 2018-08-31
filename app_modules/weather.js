@@ -1,6 +1,6 @@
 const OpenWeatherMapHelper = require("./openWeatherApi");
 const helper = new OpenWeatherMapHelper({
-  APPID: "815a6d79b8c7082e66da7a8e9ebcda39",
+  APPID: "your_API_Key",
   units: "metric"
 });
 let cityId = 2692969;
