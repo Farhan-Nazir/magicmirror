@@ -44,6 +44,24 @@ socket.on("googleEvents", data => {
   console.log(data);
 });
 // google End
+
+//Qoutes start
+socket.on("qoutes", data => {
+  let qoutes = document.getElementById("qoutes");
+  let time = new Date(Date.now()).getHours();
+  for (var i = 0; i <= 20; i++) {
+    if (time.getHours() > 5 && time.getHours() < 12) {
+      setInterval(() => {
+        qoutes.innerHTML = data.morningMessages[i];
+      }, 1000 * 5);
+    } else {
+      setInterval(() => {
+        qoutes.innerHTML = data.eveingMessages[i];
+      }, 1000 * 5);
+    }
+  }
+});
+
 /* -------------------- Helper Functions ---------------------------- */
 
 // Kevin to Celcius
@@ -76,6 +94,12 @@ function mpsTokmH(ms) {
 function onlyUnique(value, index, self) {
   return self.indexOf(value) === index;
 }
+
+function timeDate() {
+  let time = new Date(Date.now()).getHours();
+  return time;
+}
+/* -------------------- Helper Ends -----------------------*/
 
 function currentForecast(data) {
   let current_temp = document.getElementById("current_temp");

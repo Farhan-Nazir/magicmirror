@@ -25,10 +25,12 @@ io.on("connection", function(socket) {
   app_module.DateTime(io);
   app_module.rssFeeds(io);
   app_module.googleEvents(io);
+  app_module.quotes(io);
 });
 
 // setting up template engine and static folder.
-app.set("view engine", "ejs");
+//app.set("view engine", "ejs");
+
 app.set("views", path.join(__dirname + "/views"));
 app.use(express.static("views"));
 

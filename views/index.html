@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./css/style.css">
+    <link href="./css/weather-icons.css" rel="stylesheet" type="text/css">
+    <link href="./css/weather-icons-wind.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
+    <title>Magic Mirror</title>
+</head>
+
+<body>
+    <div>
+        <span class="date" id="date"></span>
+        <span class="time" id="time"></span>
+
+        <span class="weather_other_info">
+            <i class="wi wi-raindrops"></i>
+            <span id="humidity"></span> | <i class="wi wi-strong-wind"></i>
+            <span id="wind">-w-
+            </span> |
+            <span id="temp_max">High:</span>
+
+        </span>
+        <div class="divWeatherItem">
+            <ul id="weatherList"></ul>
+        </div>
+        <div>
+            <span class="currentTemp">
+                <p id="current_temp">-temp-</p>
+            </span>
+
+            <span class="icon">
+                <i id="icon"></i>
+            </span>
+
+            <span class="weather_txt">
+                <p id="weather_txt"></p>
+            </span>
+        </div>
+
+        <span class="sexy_line1">
+
+
+        </span>
+        <div id="quotes">
+            <span class="qoutes">Welcome to Smart Mirror</span>
+        </div>
+
+        <span class="sexy_line"></span>
+        <div class="todo">
+            <h3 id="todo_title">My Plans</h3>
+            <ul class="li" id="goList"></ul>
+
+        </div>
+
+        <!-- <ul id="goList"></ul> -->
+        <marquee behavior="scroll" direction="left" scrollamount="6" id="rss"></marquee>
+
+        <footer class="footer">
+            <p>Magic Mirror 1.1
+
+                <span>by Farhan</span>
+            </p>
+        </footer>
+    </div>
+</body>
+<script src="./js/script.js"></script>
+
+</html>

@@ -2,6 +2,7 @@ let weather = require("./weather");
 //let todo = require("./todo");
 let rssFeeds = require("./rssFeed");
 let googleCal = require("./googleCalendar");
+let quotes = require('./quotes')
 
 const monthNames = [
   "Jan",
@@ -59,3 +60,8 @@ module.exports.rssFeeds = io => {
 module.exports.googleEvents = io => {
   googleCal.myEvents(io);
 };
+
+//Quotes Module
+module.exports.quotes = io => {
+  quotes.quotes(io)
+}
