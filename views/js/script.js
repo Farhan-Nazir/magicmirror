@@ -48,23 +48,27 @@ socket.on("googleEvents", data => {
 //Qoutes start
 socket.on("qoutes", data => {
   let qoutes = document.getElementById("qoutes");
+  
   let time = new Date(Date.now()).getHours();
   for (var i = 0; i <= 20; i++) {
-    if (time.getHours() > 5 && time.getHours() < 12) {
+    if (time > 5 && time < 12) {
+      qoutes.innerHTML = data.morningMessages[i];
       setInterval(() => {
         qoutes.innerHTML = data.morningMessages[i];
       }, 1000 * 5);
     } else {
+      qoutes.innerHTML = data.eveingMessages[i];
       setInterval(() => {
         qoutes.innerHTML = data.eveingMessages[i];
       }, 1000 * 5);
     }
-  }
+  } 
 });
 
 /* -------------------- Helper Functions ---------------------------- */
 
 // Kevin to Celcius
+
 function k2c(k) {
   return (k - 273.15).toFixed(1);
 }
