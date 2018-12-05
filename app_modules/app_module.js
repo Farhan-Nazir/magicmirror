@@ -2,7 +2,7 @@ let weather = require("./weather");
 //let todo = require("./todo");
 let rssFeeds = require("./rssFeed");
 let googleCal = require("./googleCalendar");
-let quotes = require('./quotes')
+//let quotes = require('./quotes')
 
 const monthNames = [
   "Jan",
