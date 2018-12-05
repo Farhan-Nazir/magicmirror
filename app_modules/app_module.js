@@ -61,7 +61,7 @@ module.exports.googleEvents = io => {
   googleCal.myEvents(io);
 };
 
-//Quotes Module
+/*Quotes Module
 module.exports.quotes = io => {
   quotes.quotes(io)
-}
+} */

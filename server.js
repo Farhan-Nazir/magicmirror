@@ -25,7 +25,7 @@ io.on("connection", function(socket) {
   app_module.DateTime(io);
   app_module.rssFeeds(io);
   app_module.googleEvents(io);
-  app_module.quotes(io);
+ // app_module.quotes(io);
 });
 
 // setting up template engine and static folder.
