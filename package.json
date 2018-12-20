@@ -35,6 +35,7 @@
   },
   "homepage": "https://github.com/Farhan-Nazir/magicmirror#readme",
   "engines": {
-    "node": "10.14.0"
+    "node": "10.14.0",
+    "npm": "6.5.0"
   }
 }

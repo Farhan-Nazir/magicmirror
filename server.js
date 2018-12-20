@@ -4,6 +4,7 @@ let bodyParse = require("body-parser");
 let path = require("path");
 var socket = require("socket.io"); // not using yet
 let app = express();
+let os = require("os");
 
 //own app module
 let app_module = require("./app_modules/app_module");
