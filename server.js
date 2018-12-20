@@ -12,7 +12,7 @@ app.use(bodyParse.json());
 app.use(bodyParse.urlencoded({ extended: true }));
 
 // Listen App
-let port = process.env.PORT || 3000; //Use on server.
+let port = process.env.PORT || 5000; //Use on server.
 let server = app.listen(port, () => {
   console.log("App started on port", port);
 });
@@ -25,7 +25,7 @@ io.on("connection", function(socket) {
   app_module.DateTime(io);
   app_module.rssFeeds(io);
   app_module.googleEvents(io);
- // app_module.quotes(io);
+  // app_module.quotes(io);
 });
 
 // setting up template engine and static folder.

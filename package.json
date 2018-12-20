@@ -4,7 +4,7 @@
   "description": "Learning Project and for my own use.",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -33,5 +33,8 @@
     "rss-parser": "^3.4.3",
     "socket.io": "^2.1.1"
   },
-  "homepage": "https://github.com/Farhan-Nazir/magicmirror#readme"
+  "homepage": "https://github.com/Farhan-Nazir/magicmirror#readme",
+  "engines": {
+    "node": "10.14.0"
+  }
 }
