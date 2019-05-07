@@ -13,7 +13,7 @@ app.use(bodyParse.json());
 app.use(bodyParse.urlencoded({ extended: true }));
 
 // Listen App
-let port = process.env.PORT || 8080; //Use on server.
+let port = process.env.PORT || 3000; //Use on server.
 let server = app.listen(port, () => {
   console.log("App started on port", port);
 });
@@ -37,7 +37,7 @@ app.use(express.static("views"));
 
 //Render View
 app.get("/", function(req, res) {
-  res.render("index");
+  res.render("index.html");
 });
 
 /*----------------- Timer Setting --------------------- */
