@@ -1,15 +1,13 @@
 "use strict";
 let getTime = () => {
-  let hoursMinsSec = new Date();
+  let hoursMins = new Date();
   //let nowTime = document.getElementById("time");
   //console.log(nowTime);
 
   return (
-    hoursMinsSec.getHours() +
+    hoursMins.getHours() +
     ":" +
-    hoursMinsSec.getMinutes() +
-    ":" +
-    hoursMinsSec.getSeconds()
+    hoursMins.getMinutes()
   );
   //return time;
 };

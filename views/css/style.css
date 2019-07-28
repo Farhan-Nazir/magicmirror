@@ -18,7 +18,7 @@ html {
 .icon {
   position: absolute;
   top: 5%;
-  right: 5%;
+  right: 8%;
   width: 200px;
   height: 100px;
   font-size: 60px;
@@ -26,7 +26,7 @@ html {
 }
 .currentTemp {
   position: absolute;
-  top: 2%;
+  top: .01em;
   right: 0;
   width: 200px;
   height: 100px;
@@ -37,7 +37,7 @@ html {
 .weather_txt {
   position: absolute;
   top: 11%;
-  right: 12%;
+  right: 18%;
   width: auto;
   height: 100px;
   font-size: 18px;
@@ -62,7 +62,7 @@ html {
 }
 .sexy_line {
   position: absolute;
-  top: 20.5%;
+  margin-top: 10em;
   left: 1.5%;
   width: 300px;
   border: none;
@@ -80,7 +80,7 @@ html {
 }
 .sexy_line1 {
   position: absolute;
-  top: 16.5%;
+  top: 18%;
   right: 80px;
   width: 300px;
   border: none;
@@ -121,17 +121,18 @@ li:nth-child(n + 9):nth-child(-n + 20) {
   color: rgba(255, 255, 255, 0.1);
 }
 
-.weatherItem {
+#weatherList {
   list-style-type: none;
-  margin-top: 0.5em;
-  word-spacing: 20px;
+  margin-top: 2em;
+  word-spacing: 25px;
+  font-size: 20px;
 }
 
-.divWeatherItem {
-  position: absolute;
-  top: 20%;
+.divweatherItem {
+  position: relative;
+  top: 30%;
   right: 7%;
-  font-size: 18px;
+  
 }
 .weather_other_info {
   position: absolute;

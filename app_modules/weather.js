@@ -11,7 +11,7 @@ helper.getCurrentWeatherByCityID(cityId, (err, currentWeather) => {
   } else {
     module.exports.currentWeather = io => {
       let data = currentWeather;
-      console.log(data);
+      //console.log(data);
       io.sockets.emit("currentForecast", data);
     };
   }
@@ -23,7 +23,7 @@ helper.getFiveDaysByCityID(cityId, (err, fiveDaysForecast) => {
   } else {
     module.exports.fiveDays = io => {
       let data = fiveDaysForecast;
-      console.log(data);
+      //console.log(data);
       io.sockets.emit("fiveDaysForecast", data);
     };
   }

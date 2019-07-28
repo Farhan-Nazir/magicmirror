@@ -20,11 +20,11 @@ module.exports.myEvents = io => {
   const SCOPES = ["https://www.googleapis.com/auth/calendar.readonly"];
   var TOKEN_DIR =
     (process.env.HOME || process.env.HOMEPATH || process.env.USERPROFILE) +
-    "Users/farhannr/Dropbox/node/";
-  var TOKEN_PATH = TOKEN_DIR + "magicmrirror1.1";
+    "/documents/";
+  var TOKEN_PATH = TOKEN_DIR + "tokkenID";
 
   // Load client secrets from a local file.
-  fs.readFile("client_secret.json", (err, content) => {
+  fs.readFile("./client_secret.json", (err, content) => {
     if (err) return console.log("Error loading client secret file:", err);
     // Authorize a client with credentials, then call the Google Calendar API.
 
