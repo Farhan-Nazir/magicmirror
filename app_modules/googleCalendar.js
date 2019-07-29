@@ -112,9 +112,9 @@ module.exports.myEvents = io => {
             let eventDay = addZero(new Date(getTime).getDate());
             let eventMonth = new Date(getTime).getMonth();
             let month = monthNames[eventMonth];
-            const eventData = `${eventHour}:${eventMins} - ${
+            const eventData = `${eventDay} ${month} - ${
               event.summary
-            } | ${eventDay}-${month} `;
+            } - ${eventHour}:${eventMins} `;
             io.sockets.emit("googleEvents", eventData);
           });
         } else {

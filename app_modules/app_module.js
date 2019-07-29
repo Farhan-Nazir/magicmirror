@@ -3,7 +3,8 @@ let weather = require("./weather");
 let rssFeeds = require("./rssFeed");
 let googleCal = require("./googleCalendar");
 //let quotes = require('./quotes')
-
+let separator = ":";
+    let isTrue = false;
 const monthNames = [
   "Jan",
   "Feb",
@@ -32,13 +33,25 @@ const dayNames = [
 // Date & Time Start
 module.exports.DateTime = io => {
   setInterval(() => {
-    let time = new Date(Date.now()).toLocaleTimeString();
+    
+    let hours = new Date().getHours();
+    let mins = new Date().getMinutes();
+    let sec = new Date().getSeconds();
     let month = new Date().getMonth();
     let year = new Date().getFullYear();
     let day = new Date().getDay();
     let nowdate = new Date().getDate();
+    if(isTrue){
+      separator = ":";
+      isTrue = false;
+    } else {
+      separator = " ";
+      isTrue = true;
+    }
+    
     let date =
       dayNames[day] + ", " + monthNames[month] + " " + nowdate + " " + year;
+      let time = `${hours}${separator}${mins}`;
     let data = [time, date];
     io.sockets.emit("DateTime", data);
   }, 1000);
